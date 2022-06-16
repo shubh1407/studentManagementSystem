@@ -5,7 +5,7 @@ public class StudentRecord {
 	private int rollNo;
 	private String name;
 	private String batch;
-
+	
 	public StudentRecord(int rollNo, String name, String batch) {
 		super();
 		this.rollNo = rollNo;
@@ -37,4 +37,20 @@ public class StudentRecord {
 		return "StudentRecord [rollNo=" + rollNo + ", name=" + name + ", batch=" + batch + "]";
 	}
 	
+	
+	@Override
+	public int hashCode() {
+		return this.getRollNo();
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		StudentRecord studentRecord = (StudentRecord)obj;
+		return (this.getRollNo()==studentRecord.getRollNo());
+	}
+	
 }
+
+
+
+
